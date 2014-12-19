@@ -273,17 +273,14 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			
 			HashMap hashmap = engin.getBasepan().getHash();
 			Iterator it = hashmap.keySet().iterator();
-		//	int Size = hashmap.size();
 					
 			////////////////////////// Draw Pan
 			
 			Rectangle rect = new Rectangle(0,0,40,60);
-			//rect.translate(10 , 10);
 			int[] sets = engin.getBasepan().getSet();
 			
 			for (int i = 0 ; i < 12 ; i++)
 			{
-				//rect.translate(0,60);
 				rect.setLocation(engin.getBasepan().getPoint(i));
 				if (sets[i] != -1)
 				{
@@ -461,7 +458,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 				if ( i % 3 ==0)
 				{
 					rect.setLocation(user.getHasCardPoint(Card.GWANG).x, rect.y+50);
-					//rect.translate(point.x, point.y+50);
 				}
 			}
 		}
@@ -483,7 +479,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 				if ( i % 4 ==0)
 				{
 					rect.setLocation(user.getHasCardPoint(Card.YEOLGGOT).x, rect.y+50);
-					//rect.translate(point.x, point.y+50);
 				}
 			}
 		}
@@ -497,7 +492,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			while(it1.hasNext())
 			{
 				int index = it1.next();
-				//Card card = CardSet.getCardIndex(index);
 				Image img = ci.getImageIndex(index);
 				g.drawImage(img, rect.x, rect.y, rect.width , rect.height ,null);
 				rect.translate(20, 0);
@@ -505,9 +499,7 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 				if ( i % 6 ==0)
 				{
 					rect.setLocation(user.getHasCardPoint(Card.TTI).x, rect.y+50);
-					//rect.translate(point.x, point.y+50);
 				}
-	
 			}
 		}
 		
@@ -520,7 +512,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			while(it1.hasNext())
 			{
 				int index = it1.next();
-				//Card card = CardSet.getCardIndex(index);
 				Image img = ci.getImageIndex(index);
 				g.drawImage(img, rect.x, rect.y, rect.width , rect.height ,null);
 				rect.translate(20, 0);
@@ -529,7 +520,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 				if ( i % 7 ==0)
 				{
 					rect.setLocation(user.getHasCardPoint(Card.PEE).x, rect.y+40);
-					//rect.translate(point.x, point.y+50);
 				}
 			}
 		}
@@ -545,7 +535,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 
 		point.translate(1, 1);
 		
-		//s.createStrokedShape(p)
 		g.setStroke(new BasicStroke(5,2,1,10));
 		
 		Rectangle rect = new Rectangle(0,0,40,60);
@@ -588,7 +577,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 					g.setColor(Color.red);
 					g.fillOval(pt.x, pt.y, 10, 10);
 				}
-				//// // System.out.println("flag  " + i + " ," +  user.getFlag(i));
 			}
 		
 			i++;
@@ -607,14 +595,9 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 	}
 	public synchronized void paint(Graphics g1)
 	{	
-	//	// // // System.out.println("paint");
 		super.paint(g1);
-//		Graphics2D g = createGraphic();
-//		Draw(g);
-//		g.dispose();
 		synchronized (bufferedimage)
 		{
-			//
 			g1.drawImage(bufferedimage, 0, 0,getWidth(),getHeight(), this);
 			
 			if (foregroundbuffered != null)
@@ -627,68 +610,7 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			}
 		}
 	}
-//	public long TotalMoney(User[] user)
-//	{
-//		UserState wuser = user[0].getState();
-//		UserState luser = user[1].getState() ;
-//		
-//		int doublescore = 0;
-//		if (wuser.GO == 1)
-//		{
-//			
-//		}
-//		else if (wuser.GO == 2)
-//		{
-//			
-//		}
-//		else if (wuser.GO == 3)
-//		{
-//			
-//		}
-//		else if (wuser.GO == 4)
-//		{
-//			
-//		}
-//		if (wuser.SHAKE > 0)
-//		{
-//			doublescore ++;
-//		}
-//		if (wuser.GO > 0)
-//		{
-//			if (wuser.GO > 2)
-//			{
-//				doublescore ++;
-//			}
-//		}
-//		if (wuser.PEE_SCORE > 0 && luser.PEE < 6)
-//		{
-//			doublescore ++;
-//		}
-//		if (wuser.GWANG_SOCRE > 0 && luser.GWANG == 0 )
-//		{
-//			doublescore ++;
-//		}
-//		if (wuser.YEOLGGOT >= 7)
-//		{
-//			doublescore ++;
-//		}
-//		if ( luser.GO > 0 )
-//		{
-//			doublescore ++;
-//		}
-//		long total = 0;
-//		if (doublescore > 0)
-//		{
-//			total = wuser.SCORE * 500 * (doublescore*2);
-//		}
-//		else
-//		{
-//			total = wuser.SCORE * 500;
-//		}
-//		return total;
-//	}
-
-
+	
 	public void GameOver(User user) {
 		// TODO Auto-generated method stub
 	
@@ -705,14 +627,12 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			users[1] = getAnotherUser(user);
 			
 			int total = user.SumTotalScore(users[0]);
-			// // System.out.println("total" + total);
 			long money = total * 500;
 			if (total == 0 )
 			{
 				money = 7 * 500;
 			}
 			long getmoney = users[1].StealMoney(money);
-			// // System.out.println("from" + users[1].getName() + "getmoney" + getmoney);
 			users[0].PutMoney(getmoney);
 			
 			ShowDialog(ASKTAG.ENDGAME,user,users );
@@ -865,7 +785,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 		}
 		public void Throwcards()
 		{
-			// // System.out.println(fromPoint+ "to" + toPoint);
 			Point tempPoint = new Point(fromPoint);
 			
 			starttime = System.currentTimeMillis();
@@ -874,13 +793,9 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			{
 				calstep(tempPoint);
 				tempPoint.translate((int)stepx, (int)stepy);
-				//step( tempPoint);
 				synchronized(bufferedimage)
 				{	
-					
 					Graphics2D g2 = createGraphic();
-//					g2.setClip(tempPoint.x-20, tempPoint.y-20, 120, 120);
-//					g2.hitClip(x, y, width, height)
 					Draw(g2);
 					g2.drawImage(image, tempPoint.x, tempPoint.y, null);
 					
@@ -897,22 +812,16 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 		}
 		public void Throwcardsdelay()
 		{
-		
-		//	Point tempPoint = new Point(fromPoint);
 			try
 			{
-					//Thread.sleep(1000);
-			synchronized(bufferedimage)
-			{
-				Graphics2D g2 = createGraphic();
+				synchronized(bufferedimage)
+				{
+					Graphics2D g2 = createGraphic();
 
-				//g2.setClip(tempPoint.x-20, tempPoint.y-20, 120, 120);
-				Draw(g2);
-				g2.drawImage(image, fromPoint.x, fromPoint.y , null);
-				
-				//g2.drawImage(image, 300, 300, null);
-				g2.dispose();
-			}
+					Draw(g2);
+					g2.drawImage(image, fromPoint.x, fromPoint.y , null);
+					g2.dispose();
+				}
 			
 	
 				Thread.sleep(300);
@@ -921,7 +830,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 				synchronized(bufferedimage)
 				{	
 					Graphics2D g2 = createGraphic();
-					//g2.setClip(tempPoint.x-20, tempPoint.y-20, 120, 120);
 					Draw(g2);
 					g2.drawImage(image, toPoint.x, toPoint.y, null);
 					
@@ -943,10 +851,9 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 		}
 		public void step(Point currentPoint)
 		{
-			
-			// // // System.out.println("distancd : "+ toPoint.distance(currentPoint));
+
 		}
-		public void run()//(Image image , long time, Point fromPoint, Point toPoint)
+		public void run()
 		{
 	
 			switch (flag)
@@ -958,7 +865,6 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 				Throwcards();
 				break;
 			}
-		//	Draw(g2);
 		}
 
 	}

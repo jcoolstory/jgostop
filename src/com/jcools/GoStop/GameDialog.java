@@ -17,7 +17,6 @@ class GameDialog {
 	}
 	public static int ShowDialog(Component con , int flag , User user , Object[] object)
 	{
-
 		String str = "";
 		switch (flag)
 		{
@@ -64,10 +63,6 @@ class GameDialog {
 			str = "\n" + user1.getName() + "이/가 승리";
 
 			int doublescore = 0;
-			
-//			int x = 10 ;
-//			int y = 20 ;
-			
 			
 			str +="\r\n";
 			str += "\n점수 " + wuser.SCORE ;

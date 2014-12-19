@@ -29,25 +29,6 @@ class BasePan
 		{
 			pointlist.add(new Point(cardpointarray[i][0],cardpointarray[i][1]));
 		}
-//		pointlist.add(new Point(300,200));
-//		pointlist.add(new Point(400,200));
-//		
-//		pointlist.add(new Point(100,200));		
-//		pointlist.add(new Point(100,300));
-//		pointlist.add(new Point(100,400));		
-//		
-//		pointlist.add(new Point(400,300));
-//		
-//		pointlist.add(new Point(200,400));
-//		pointlist.add(new Point(300,400));
-//		pointlist.add(new Point(400,400));
-//		
-//
-//		pointlist.add(new Point(200,200));
-//		
-//		pointlist.add(new Point(10,300));
-//		
-//		pointlist.add(new Point(500,300));
 	}
 	
 	// 빈자리 슬롯 찾아서 새로운 카드셋 할당

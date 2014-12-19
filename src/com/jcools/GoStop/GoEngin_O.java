@@ -7,8 +7,6 @@ import java.util.Iterator;
 
 import com.jcools.GoStop.GoStopMainPanel.Animate;
 
-
-
 abstract class GoEngin_O
 {
 	protected int turn =0;
@@ -41,7 +39,6 @@ abstract class GoEngin_O
 		
 		if (getP1().getTurn())
 		{
-//			//System.out.println("teak");
 			int index = getP1().getPointtoIndex(pt);
 			
 			if ( index != -1)
@@ -118,7 +115,6 @@ abstract class GoEngin_O
 		p2.calScore();
 	}
 	
-
 	public void TurnOff()
 	{
 		
@@ -250,7 +246,7 @@ abstract class GoEngin_O
 								index = (Integer) Indexs.get(select);	
 								
 								
-								PopUp("»ÁµÈ±‚!", 1000);
+								PopUp("ÌùîÎì§Í∏∞!", 1000);
 							}
 						}
 					 
@@ -327,14 +323,14 @@ abstract class GoEngin_O
 	
 						moveCard(takecard);
 						stealcount++;
-						PopUp("¬ !", 1000);
+						PopUp("Ï™Ω!", 1000);
 	
 					}
 					if (result2 == 3 )
 					{
 						str += "shit";
 						
-						PopUp("ö¸¥Ÿ!!", 1000);
+						PopUp("ÔøΩÊÇ£ÔøΩ!!", 1000);
 						
 					}
 					if (result2 == 4 )
@@ -389,7 +385,7 @@ abstract class GoEngin_O
 				if (getBasepan().isEmpty() && getStack().getEnoughSize() != 0)
 				{
 					stealcount++;
-					PopUp("∆«æµ", 1000);
+					PopUp("ÌåêÏì∏", 1000);
 					
 				}
 				for (int i = 0 ; i < stealcount ; i++)
@@ -408,7 +404,7 @@ abstract class GoEngin_O
 						if (ShowDialog(ASKTAG.GOANDSTOP, user) == 0)
 						{
 							user.DoGo();
-							PopUp(user.getGo() + " ∞Ì", 1000);
+							PopUp(user.getGo() + " Í≥†", 1000);
 							
 						}
 						else

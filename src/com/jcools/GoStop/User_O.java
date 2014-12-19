@@ -235,7 +235,6 @@ abstract class User_O
 				count++;
 			}
 		}
-	//	System.out.println("-[---Count " + count);
 		
 		if (count >= 3)
 			return true;
@@ -274,7 +273,6 @@ abstract class User_O
 		int type;
 		ArrayList al = null;
 		Card card = CardSet.getCardIndex(index);
-	//	System.out.println("SendCard : " + card.toString());
 		type = card.getType();
 		al = (ArrayList) hasCard.get(type);
 		if (al == null)
@@ -289,35 +287,7 @@ abstract class User_O
 			//Collections.sort(al);
 		}
 	}
-	
-//	public void SendCardList(ArrayList list) {
-//		// TODO Auto-generated method stub
-//	//	System.out.println("SendCardList");
-//		Iterator it = list.iterator();
-//		int index ;
-//		int type;
-//		ArrayList al = null;
-//		while (it.hasNext())
-//		{
-//			index = (Integer) it.next();
-//			Card card = CardSet.getCardIndex(index);
-////			System.out.println("SendCard : " + card.toString());
-//			type = card.getType();
-//			al = (ArrayList) hasCard.get(type);
-//			if (al == null)
-//			{
-//				ArrayList tempal = new ArrayList();
-//				tempal.add(index);
-//				hasCard.put(type, tempal);
-//			}
-//			else
-//			{
-//				al.add(index);
-//				//Collections.sort(al);
-//			}
-//		}
-//		
-//	}
+
 	public void calScore()
 	{
 		Score = 0;
@@ -611,7 +581,6 @@ abstract class User_O
 	public  void setCardDeckPoint(int x, int y)
 	{
 		DeckPoint = new Point(x,y);
-		//hasCardMap.put("CardDeckPoint" , new Point(x,y));
 	}
 	public Point getCardDeckPoint()
 	{
@@ -620,5 +589,4 @@ abstract class User_O
 	public abstract int ask(int seletc);
 	public abstract int setHasCardPoint(int x, int y);
 	public abstract int setHasCardPoint(HashMap map);
-//	public abstract void setTakeCardPoint(int width, int height);
 }

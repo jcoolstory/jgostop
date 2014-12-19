@@ -4,6 +4,48 @@ import java.util.Stack;
 
 class Card
 {
+	
+
+	
+	public static final int GWANG = 1;
+	public static final int YEOLGGOT = 2;
+	public static final int TTI = 3;
+	public static final int PEE = 4;
+	
+	public static int GUCKGIN = 7;
+	public static int GODORI = 8;
+	public static int BEGWANG = 9;
+	public static int CHODAN = 10;
+	public static int CHEONGDAN = 11;
+	public static int HONGDAN = 12;
+	
+	public static int EMTY = 0;
+	 
+	public static int FIRST = 1;
+	public static int SECOND = 2;
+	public static int THIRD = 3;
+	public static int FORTH = 4;
+	public static int FIVETH = 5;
+	public static int SIXTH = 6;
+	public static int SEVENTH = 7;
+	public static int EIGHT = 8;
+	public static int NINE = 9;
+	public static int TEN = 10;
+	public static int ELEVEN = 11;
+	public static int TWELVE = 12;
+	public static int BONUS = 13;
+	
+	
+	public static final int SSANPEE = 1;
+	public static int BONUS2 = 2;
+	public static int BONUS3 = 3;
+	
+	private int Set ;
+	private int Line;
+	private int Type;
+	private int TypeSub;
+	private int Index;
+	
 	public Card(int index, int set, int line, int  type) {
 		// TODO Auto-generated constructor stub
 		this.setIndex(index);
@@ -50,46 +92,6 @@ class Card
 	public int getIndex() {
 		return Index;
 	}
-	
-	public static final int GWANG = 1;
-	public static final int YEOLGGOT = 2;
-	public static final int TTI = 3;
-	public static final int PEE = 4;
-	
-	public static int GUCKGIN = 7;
-	public static int GODORI = 8;
-	public static int BEGWANG = 9;
-	public static int CHODAN = 10;
-	public static int CHEONGDAN = 11;
-	public static int HONGDAN = 12;
-	
-	public static int EMTY = 0;
-	 
-	public static int FIRST = 1;
-	public static int SECOND = 2;
-	public static int THIRD = 3;
-	public static int FORTH = 4;
-	public static int FIVETH = 5;
-	public static int SIXTH = 6;
-	public static int SEVENTH = 7;
-	public static int EIGHT = 8;
-	public static int NINE = 9;
-	public static int TEN = 10;
-	public static int ELEVEN = 11;
-	public static int TWELVE = 12;
-	public static int BONUS = 13;
-	
-	
-	public static final int SSANPEE = 1;
-	public static int BONUS2 = 2;
-	public static int BONUS3 = 3;
-	
-	private int Set ;
-	private int Line;
-	private int Type;
-	private int TypeSub;
-	private int Index;
-	
 
 	public boolean isFieldCard()
 	{
@@ -121,14 +123,11 @@ class CardSet
 {
 	//12 X 4 + 2
 	public static ArrayList<Card> cardsetsAl = new ArrayList<Card>();
-//	public Stack<Card> cardStack = new Stack<Card>();
 	public static final int CARDMAX = 50;
 
 	public static boolean loaded = false;
 	protected static void cardsetting()
 	{
-		
-//		int index, int set, int line, int  type
 		Card[] cards = new Card[CARDMAX+1];
 		
 		cards[0] = new Card(0,1,1,Card.GWANG);

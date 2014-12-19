@@ -1,7 +1,6 @@
 package com.jcools.GoStop;
 
 import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
 import javax.swing.*;
@@ -11,14 +10,8 @@ public class GoStop {
 		JFrame frame = new GoStopFrame();
 		frame.setVisible(true);
 	}
-//	public static void main(String[] args)
-//	{
-//		Cardtemp cardset = new Cardtemp();
-//		
-//		
-//	}
-	
 }
+
 class Cardtemp extends CardSet
 {
 	public Cardtemp()
@@ -32,11 +25,13 @@ class Cardtemp extends CardSet
 		StringBuilder sb = new StringBuilder();
 		
 		for (int i = 0 ; i < len ; i++)
-		{if (i % 12 == 0 && i !=0 )
 		{
-			x = 0;
-			y += height;
-		}
+			if (i % 12 == 0 && i !=0 )
+			{
+				x = 0;
+				y += height;
+			}
+			
 			Card card = cardsetsAl.get(i);
 			int index = card.getIndex();
 			int set = card.getLine();
@@ -46,12 +41,6 @@ class Cardtemp extends CardSet
 			int left = x;
 			int top = y;
 			
-			
-			
-		
-				
-				
-								
 			String buff = String.format("%d/%d,%d/%d,%d,%d,%d",i+1 ,line,set,left,top,width,height);
 			if (type2 == Card.EMTY)
 			{
@@ -62,9 +51,7 @@ class Cardtemp extends CardSet
 				buff += String.format("/%d,%d", type, type2);
 			}
 			sb.append(buff+"\n");
-			x = left + width;
-
-			
+			x = left + width;	
 		}
 		try
 		{
@@ -75,10 +62,8 @@ class Cardtemp extends CardSet
 			osw.close();
 			fos.close();
 		}
-		catch (Exception e) {
-			
+		catch (Exception e) {			
 			// TODO: handle exception
 		}
-		//System.out.print(sb.toString());
 	}
 }

@@ -22,12 +22,10 @@ class CardStack
 	}
 	public final Card popCard()
 	{
-		
 		if (!cardStack.isEmpty())
 			return cardStack.pop();
 		
 		return null;
-		
 	}
 	
 	// Ä«µå ¼¯±â..

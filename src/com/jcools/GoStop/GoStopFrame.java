@@ -12,8 +12,6 @@ class Prepare extends JPanel
 	{
 		background = Toolkit.getDefaultToolkit().getImage("images/background_brown.png");
 		setSize(400,500);
-        //URL url = Prepare.class.getResource("images/background_brown.png");
-       // background = getToolkit().getImage(url);
         try {
             MediaTracker tracker = new MediaTracker(this);
             tracker.addImage(background, 0);
@@ -22,7 +20,6 @@ class Prepare extends JPanel
 		invalidate();
 	}
 
-
 	@Override
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
@@ -30,11 +27,7 @@ class Prepare extends JPanel
 		g.setColor(Color.BLACK);
 		g.fillRect(0,0,getParent().getWidth(), getParent().getHeight());
 		g.drawImage(background, 0,0, getParent().getWidth(), getParent().getHeight(), null);
-		//g.drawString("getParent().getWidth()" + getParent().getWidth() + "/" + "getParent().getHeight()" + getParent().getHeight(), 200, 200);
-//		long starttime = System.currentTimeMillis();
 		Resource.LoadImage(this);
-//		long endtime = System.currentTimeMillis();
-	//	g.drawString("start : "+ starttime + " end : "+endtime + " delay :"  +( endtime - starttime), 100, 100);
 	}
 	
 }
@@ -56,7 +49,6 @@ public class GoStopFrame extends JFrame {
 						(int)(  800	), 
 						(int)(  700));
 
-	//	getContentPane().setLayout(new BorderLayout());
 		Prepare pre = new Prepare();
 		getContentPane().add(pre);
 		JMenuBar menubar = new JMenuBar();
@@ -88,11 +80,9 @@ public class GoStopFrame extends JFrame {
 				
 			}
 		});
-		menu.add(exitItem );
-		
+		menu.add(exitItem );		
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//cp.setBounds(20, 20, 100, 100);
 		
 	}
 }
