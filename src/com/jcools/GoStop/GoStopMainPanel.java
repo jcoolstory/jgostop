@@ -308,7 +308,7 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			DrawTakeCard(g, engin.getP2(), new Point(580,15));
 			DrawTakeCard(g, engin.getP1(), new Point(580,505));			
 		
-			////////////////////Draw ¡ﬂæ” ƒ´µÂ
+			////////////////////Draw Ï§ëÏïô Ïπ¥Îìú
 			
 			Stack stack = engin.getStack().getList();
 			
@@ -334,7 +334,7 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 		long temp = cash;
 		long[] cast = {10000,100000000};
 		String  str = "";
-		String[] caststring = {"∏∏","æÔ"};
+		String[] caststring = {"Îßå","Ïñµ"};
 		if (cash > cast[1])
 		{
 			
@@ -347,9 +347,9 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			temp = (temp % cast[0]);
 		}
 		if ( temp == 0)
-			str += "ø¯";
+			str += "Ïõê";
 		else
-			str += temp + "ø¯";
+			str += temp + "Ïõê";
 		return str;
 	}
 	public void DrawUser(Graphics2D g, User user, int x, int y)
@@ -361,10 +361,10 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 		
 		UserState state = user.getState();
 		String str = "";
-		Font font = new Font("±º∏≤√º",Font.BOLD,12);
+		Font font = new Font("Íµ¥Î¶ºÏ≤¥",Font.BOLD,12);
 		
 		g.setFont(font);
-		g.drawString(user.getScore() + "¡°", tempx, tempy);
+		g.drawString(user.getScore() + "Ï†ê", tempx, tempy);
 		
 		g.setColor(Color.RED);
 		
@@ -372,13 +372,13 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 		UserState user1state = user1.getState();
 		str = "";
 		if (state.PEE < 6 &&  user1state.PEE_SCORE > 0)
-			str += "««π⁄ ";
+			str += "ÌîºÎ∞ï ";
 		if (state.GWANG == 0 && user1state.GWANG_SOCRE > 0)
-			str += "±§π⁄  ";
+			str += "Í¥ëÎ∞ï  ";
 		g.drawString(str, tempx, y +80);
 		
 		g.setColor(Color.white);
-		font = new Font("±º∏≤√º",Font.PLAIN,12);
+		font = new Font("Íµ¥Î¶ºÏ≤¥",Font.PLAIN,12);
 		g.setFont(font);
 		
 		tempy += 20;
@@ -386,39 +386,39 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 		if (user.getGo() != 0)
 		{
 			tempy += 20;
-			g.drawString( user.getGo()+ "∞Ì", tempx , tempy);
+			g.drawString( user.getGo()+ "Í≥†", tempx , tempy);
 		}
 		if (state.SHAKE != 0)
 		{
 			tempy += 20;
-			g.drawString( "»ÁµÍ", tempx , tempy);
+			g.drawString( "ÌùîÎì¶", tempx , tempy);
 			
 		}
 
 
 		tempy = y;
 		tempx += 100;
-		str = "±§  " + state.GWANG;
+		str = "Í¥ë  " + state.GWANG;
 		g.drawString( str , tempx , tempy);
 		tempy += 20;
-		str = "ø≠≤˝ " + state.YEOLGGOT;
+		str = "Ïó¥ÎÅó " + state.YEOLGGOT;
 		g.drawString( str , tempx , tempy);
 		tempy += 20;
-		str = "∂Ï  " + state.TTI;
+		str = "Îù†  " + state.TTI;
 		g.drawString( str , tempx , tempy);
 		tempy += 20;
-		str = "««  " + state.PEE;
+		str = "Ìîº  " + state.PEE;
 		g.drawString( str , tempx , tempy);
 		tempy += 20;
 		str = "";
 		if (state.GODORI)
-			str += "∞Ìµµ∏Æ  ";
+			str += "Í≥†ÎèÑÎ¶¨  ";
 		if (state.CHEONGDAN)
-			str += "√ª¥‹ ";
+			str += "Ï≤≠Îã® ";
 		if (state.CHODAN)
-			str += "√ ¥‹ ";
+			str += "Ï¥àÎã® ";
 		if (state.HONGDAN)
-			str += "»´¥‹ ";
+			str += "ÌôçÎã® ";
 		g.drawString( str , tempx -10 , tempy);
 
 	}
@@ -710,7 +710,7 @@ class GoStopMainPanel extends JPanel implements Runnable, MouseListener ,GoFrame
 			Font oft = g.getFont();
 			
 			FontRenderContext frc = g.getFontRenderContext();
-            Font f = new Font("±√º≠√º",Font.BOLD ,35);
+            Font f = new Font("Í∂ÅÏÑúÏ≤¥",Font.BOLD ,35);
             GeneralPath  path ;
             TextLayout tl = new TextLayout(str, f, frc);
 

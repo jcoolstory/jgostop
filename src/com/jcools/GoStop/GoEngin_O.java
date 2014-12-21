@@ -329,9 +329,7 @@ abstract class GoEngin_O
 					if (result2 == 3 )
 					{
 						str += "shit";
-						
-						PopUp("�患�!!", 1000);
-						
+						PopUp("쌋다!!", 1000);
 					}
 					if (result2 == 4 )
 					{

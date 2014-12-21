@@ -52,8 +52,8 @@ public class GoStopFrame extends JFrame {
 		Prepare pre = new Prepare();
 		getContentPane().add(pre);
 		JMenuBar menubar = new JMenuBar();
-		JMenu menu = new JMenu("°ÔÀÓ");
-		JMenuItem item = new JMenuItem("½ÃÀÛ");
+		JMenu menu = new JMenu("ê²Œìž„");
+		JMenuItem item = new JMenuItem("ì‹œìž‘");
 		item.addActionListener(new ActionListener() {
 			
 			@Override
@@ -70,7 +70,7 @@ public class GoStopFrame extends JFrame {
 		this.setJMenuBar(menubar);
 		menubar.add(menu);
 		menu.add(item);
-		JMenuItem exitItem = new JMenuItem("Á¾·á");
+		JMenuItem exitItem = new JMenuItem("ì¢…ë£Œ");
 		exitItem.addActionListener(new ActionListener() {
 			
 			@Override

@@ -28,7 +28,7 @@ class CardStack
 		return null;
 	}
 	
-	// Ä«µå ¼¯±â..
+	// ì¹´ë“œ ì„žê¸°..
 	public void RandCard()
 	{
 		cardStack.clear();

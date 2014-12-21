@@ -26,7 +26,7 @@ class GameDialog {
 				return user.ask(2);
 			}
 			return JOptionPane.showConfirmDialog(
-					con, "GO?", "°¥±î ¸»±î", JOptionPane.YES_NO_OPTION,
+					con, "GO?", "ê°ˆê¹Œ ë§ê¹Œ", JOptionPane.YES_NO_OPTION,
 					JOptionPane.QUESTION_MESSAGE, null);
 		case ASKTAG.SHOWCARD:
 		{
@@ -43,7 +43,7 @@ class GameDialog {
 				imgs[i] = img;
 			}
 			
-			JOptionPane.showOptionDialog(con, "Èçµé¾î¿ä", "Èçµé±â", JOptionPane.NO_OPTION,
+			JOptionPane.showOptionDialog(con, "í”ë“¤ì–´ìš”", "í”ë“¤ê¸°", JOptionPane.NO_OPTION,
 					JOptionPane.INFORMATION_MESSAGE, null,imgs,0);
 			return 0;
 		}
@@ -60,29 +60,29 @@ class GameDialog {
 			JTextArea jta = new JTextArea();
 			panel.setBackground(Color.white);
 			jta.setFocusable(false);
-			str = "\n" + user1.getName() + "ÀÌ/°¡ ½Â¸®";
+			str = "\n" + user1.getName() + "ì´/ê°€ ìŠ¹ë¦¬";
 
 			int doublescore = 0;
 			
 			str +="\r\n";
-			str += "\nÁ¡¼ö " + wuser.SCORE ;
-			str += "\n±¤ + " + wuser.GWANG_SOCRE;
-			str += "\n¿­²ı  + " + wuser.YEOLGGOT_SCORE;
-			str += "\n¶ì  + " + wuser.TTI_SCORE;
-			str += "\nÇÇ + " + wuser.PEE_SCORE;
+			str += "\nì ìˆ˜ " + wuser.SCORE ;
+			str += "\nê´‘ + " + wuser.GWANG_SOCRE;
+			str += "\nì—´ë—  + " + wuser.YEOLGGOT_SCORE;
+			str += "\në   + " + wuser.TTI_SCORE;
+			str += "\ní”¼ + " + wuser.PEE_SCORE;
 			str += "\n";
 			if (wuser.GODORI)
-				str += "°íµµ¸® + 3";
+				str += "ê³ ë„ë¦¬ + 3";
 			if (wuser.CHEONGDAN)
-				str += "Ã»´Ü  + 3";
+				str += "ì²­ë‹¨  + 3";
 			if (wuser.CHODAN)
-				str += "ÃÊ´Ü  + 3";
+				str += "ì´ˆë‹¨  + 3";
 			if (wuser.HONGDAN)
-				str += "È«´Ü + 3";
+				str += "í™ë‹¨ + 3";
 			if (wuser.GO > 0)
 			{
 				
-				str += "\n"+wuser.GO + " °í  ";
+				str += "\n"+wuser.GO + " ê³   ";
 				if (wuser.GO > 2)
 				{
 					str += "X 2";
@@ -91,23 +91,23 @@ class GameDialog {
 			}
 			if (wuser.SHAKE > 0)
 			{
-				str +="\nÈçµé±â X 2   ";
+				str +="\ní”ë“¤ê¸° X 2   ";
 				doublescore ++;
 			}
 
 			if (wuser.PEE_SCORE > 0 && luser.PEE < 5)
 			{
-				str += "ÇÇ¹Ú X 2";
+				str += "í”¼ë°• X 2";
 				doublescore ++;
 			}
 			if (wuser.GWANG_SOCRE > 0 && luser.GWANG == 0 )
 			{
-				str += "±¤¹Ú X 2";
+				str += "ê´‘ë°• X 2";
 				doublescore ++;
 			}
 			if ( luser.GO > 0 )
 			{
-				str += "°í¹Ú X 2";
+				str += "ê³ ë°• X 2";
 				doublescore ++;
 			}
 			long total = 0;
@@ -115,7 +115,7 @@ class GameDialog {
 			
 			total = user1.getTotalScore() * 500;
 			
-			str += " \r\n \n" + user1.getTotalScore() + "Á¡ X 500 ¿ø = " + total + " ¿ø";
+			str += " \r\n \n" + user1.getTotalScore() + "ì  X 500 ì› = " + total + " ì›";
 			label.setText(str);
 			jta.setText(str);
 			panel.add(jta);
@@ -135,7 +135,7 @@ class GameDialog {
 			Rectangle rect = con.getBounds();
 			po.translate((int)(rect.getCenterX() - jd.getBounds().getWidth() / 2), (int)(rect.getCenterY() -jd.getHeight() / 2));
 			jd.setLocation(po);
-			jd.setTitle("Å¬¸¯½Ã Ã¢À» ´İ½À´Ï´Ù");
+			jd.setTitle("í´ë¦­ì‹œ ì°½ì„ ë‹«ìŠµë‹ˆë‹¤");
 			jd.setVisible(true);
 			return -1;
 		case ASKTAG.SHAKE:
@@ -144,7 +144,7 @@ class GameDialog {
 				return user.ask(2);
 			}
 			return JOptionPane.showConfirmDialog(
-					con, "Èçµé±î¿ä", "Èçµé±î ¸»±î", JOptionPane.YES_NO_OPTION,
+					con, "í”ë“¤ê¹Œìš”", "í”ë“¤ê¹Œ ë§ê¹Œ", JOptionPane.YES_NO_OPTION,
 					JOptionPane.QUESTION_MESSAGE, null);
 		case ASKTAG.BOMB:
 		case ASKTAG.SELECTCARD:
@@ -166,16 +166,16 @@ class GameDialog {
 				imgs[i] = img;
 			}
 			
-			int tag = JOptionPane.showOptionDialog(con, "¾î´À°É µå½Ç±î¿ä", "¸Ô¾îº¾½Ã´Ù", JOptionPane.OK_OPTION,
+			int tag = JOptionPane.showOptionDialog(con, "ì–´ëŠê±¸ ë“œì‹¤ê¹Œìš”", "ë¨¹ì–´ë´…ì‹œë‹¤", JOptionPane.OK_OPTION,
 					JOptionPane.QUESTION_MESSAGE, null,imgs,0);
 			if (tag == -1 )
 				tag = 0;
 			return tag;
 		case ASKTAG.STARTGAME:
 			str ="";
-			String[] strs = {"½ÃÀÛ" , "Á¾·á"};
-			return JOptionPane.showOptionDialog(con, "½ÃÀÛ", "¸Â°í", JOptionPane.OK_OPTION,
-					JOptionPane.QUESTION_MESSAGE, null,strs,"½ÃÀÛ");
+			String[] strs = {"ì‹œì‘" , "ì¢…ë£Œ"};
+			return JOptionPane.showOptionDialog(con, "ì‹œì‘", "ë§ê³ ", JOptionPane.OK_OPTION,
+					JOptionPane.QUESTION_MESSAGE, null,strs,"ì‹œì‘");
 		}
 		return -1;
 	}

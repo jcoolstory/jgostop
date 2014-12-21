@@ -24,14 +24,14 @@ class BasePan
 		}
 		int size = cardpointarray.length;
 		
-		// °ÔÀÓÆÇ °¡¿îµ¥ Ä«µå ½½·Ô À§Ä¡
+		// ê²Œì„íŒ ê°€ìš´ë° ì¹´ë“œ ìŠ¬ë¡¯ ìœ„ì¹˜
 		for (int i = 0 ; i < size ; i++)
 		{
 			pointlist.add(new Point(cardpointarray[i][0],cardpointarray[i][1]));
 		}
 	}
 	
-	// ºóÀÚ¸® ½½·Ô Ã£¾Æ¼­ »õ·Î¿î Ä«µå¼Â ÇÒ´ç
+	// ë¹ˆìë¦¬ ìŠ¬ë¡¯ ì°¾ì•„ì„œ ìƒˆë¡œìš´ ì¹´ë“œì…‹ í• ë‹¹
 	public void addSet(int set)
 	{
 		for (int i = 0 ; i < 12 ; i++)
@@ -44,7 +44,7 @@ class BasePan
 		}
 	}
 	
-	// ÇØ´ç Ä«µå¼Â ½½·Ô »èÁ¦ (Ä«µå¸¦ À¯ÀúµéÀÌ ÀüºÎ È¸¼öÇØ °¬À»¶§
+	// í•´ë‹¹ ì¹´ë“œì…‹ ìŠ¬ë¡¯ ì‚­ì œ (ì¹´ë“œë¥¼ ìœ ì €ë“¤ì´ ì „ë¶€ íšŒìˆ˜í•´ ê°”ì„ë•Œ
 	public void removeSet(int set)
 	{
 		for (int i = 0 ; i < 12 ; i++)
@@ -57,7 +57,7 @@ class BasePan
 		}
 	}
 	
-	// ÀüºÎ ¸®¼Â
+	// ì „ë¶€ ë¦¬ì…‹
 	public void Reset() {
 		// TODO Auto-generated method stub
 		
@@ -69,19 +69,19 @@ class BasePan
 		pan.clear();
 	}
 	
-	// À¯Àúµé ¶Ç´Â Ä«µå µ¦¿¡¼­ ³ª¿Â Ä«µå ¹Ğ¾î ³Ö±â
+	// ìœ ì €ë“¤ ë˜ëŠ” ì¹´ë“œ ë±ì—ì„œ ë‚˜ì˜¨ ì¹´ë“œ ë°€ì–´ ë„£ê¸°
 	public int push(Card card) {
 		return push(card.getIndex());
 	}
 	
-	// ¹Ğ¾î ³Ö±â ¿À¹ö¶óÀÌµù  ÀÎµ¦½º¸¸ ÀÌ¿ëÇÑ ¹öÀü
+	// ë°€ì–´ ë„£ê¸° ì˜¤ë²„ë¼ì´ë”©  ì¸ë±ìŠ¤ë§Œ ì´ìš©í•œ ë²„ì „
 	public int push(int index) {
 		
 		// TODO Auto-generated method stub
 		Card card = CardSet.getCardIndex(index);
 		int set = card.getSet();
 		
-		// tempalÀÌ ºñ¾îÀÖÀ¸¸é »õ·Î¿î ½½·Ô »ğÀÔ.. 
+		// tempalì´ ë¹„ì–´ìˆìœ¼ë©´ ìƒˆë¡œìš´ ìŠ¬ë¡¯ ì‚½ì….. 
 		ArrayList tempal = (ArrayList) pan.get(set);
 		if (tempal == null)
 		{
@@ -92,7 +92,7 @@ class BasePan
 			return 1;
 			
 		}
-		// Á¸ÀçÇÏ¸é Ãß°¡ ÈÄ Á¤·Ä
+		// ì¡´ì¬í•˜ë©´ ì¶”ê°€ í›„ ì •ë ¬
 		else
 		{
 			tempal.add(index);
@@ -101,7 +101,7 @@ class BasePan
 		}
 	}
 	
-	// Draw¿ëÀ¸·Î °ÔÀÓÆÇ¿¡¼­ Ä«µå ¼Â  ¸ñ·Ï ¹İÈ¯ 
+	// Drawìš©ìœ¼ë¡œ ê²Œì„íŒì—ì„œ ì¹´ë“œ ì…‹  ëª©ë¡ ë°˜í™˜ 
 	public final int[] getSet()
 	{
 		return IndexArray;
